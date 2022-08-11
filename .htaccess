@@ -1,5 +1,5 @@
 RewriteEngine on
-RewriteCond %{THE_REQUEST} /([^.]+).html [NC]
+RewriteCond %{index} /([^.]+).html [NC]
 RewriteRule ^ /%1 [NC,L,R]
 
 RewriteCond %{index}.html -f
