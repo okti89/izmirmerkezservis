@@ -1,5 +1,6 @@
-Options +FollowSymlinks
-RewriteEngine On
-RewriteRule ^index.*$ index.html [NC]
-RewriteRule ^air.* air.html [NC]
-ErrorDocument 404 /404.html
+RewriteEngine on
+RewriteCond %{THE_REQUEST} /([^.]+).html [NC]
+RewriteRule ^ /%1 [NC,L,R]
+
+RewriteCond %{index}.html -f
+RewriteRule ^ %{index}.html [NC,L]
